@@ -8,8 +8,38 @@
 # Owner: Dominic Pontious
 
 class Planet(object):
-	# These are the variables I want every planet to have
+	"""
+	Variables:
+				name <str>
+				distance <int>
+				orbitalPeriod <float>
+				data1 <None>
+				data2 <None>
+	Methods:
+				__init__(self) Initializes the Planet
+				getName(self) Getter method for named variable
+				getDistance(self) Getter method for named variable
+				getOrbitalPeriod(self) Getter method for named variable
+				getData1(self) Getter method for named variable
+				getData2(self) Getter method for named variable
+				setName(self, name) Setter method for named variable
+				setDistance(self, distance) Setter method for named variable
+				setOrbitalPeriod(self, orbitalPeriod) Setter method for named variable
+				info(self) Print method for all class variables
+				printSingleTable(self, columnSize, name, data) Print method for formatting a list
+				printDoubleTable(self, leftColumnSize, name1, rightColumnSize, name2, data)
+					Print method for formatting a dictionary
+	"""
+
 	def __init__(self, name = "none", distance = 1, orbitalPeriod = .1, data1 = None, data2 = None):
+		"""
+		Initializes a Planet class with the following parameters
+		Input:	name <str>
+				distance <int>
+				orbitalPeriod <float>
+				data1 <None>
+				data2 <None>
+		"""
 		self.name = name
 		self.distance = distance
 		self.orbitalPeriod = orbitalPeriod
@@ -18,32 +48,85 @@ class Planet(object):
 
 	# The following are getters so we do not directly reference the data in the class
 	def getName(self):
+		"""
+		Getter method for name variable
+		Input: None
+		Output: name <str>
+		"""
+
 		return self.name
 
 	def getDistance(self):
+		"""
+		Getter method for distance variable
+		Input: None
+		Output: distance <int>
+		"""
+
 		return self.distance
 
 	def getOrbitalPeriod(self):
+		"""
+		Getter method for orbitalPeriod variable
+		Input: None
+		Output: orbitalPeriod <float>
+		"""
+
 		return self.orbitalPeriod
 
 	def getData1(self):
+		"""
+		Getter method for data1 variable
+		Input: None
+		Output: data1 <None>
+		"""
+
 		return self.data1
 
 	def getData2(self):
+		"""
+		Getter method for data2 variable
+		Input: None
+		Output: data2 <None>
+		"""
+
 		return self.data2
 
 	# These are the setters
 	def setName(self, name):
+		"""
+		Setter method for name variable
+		Input: name <str>
+		Output: None
+		"""
+
 		self.name = name
 
 	def setDistance(self, distance):
+		"""
+		Setter method for distance variable
+		Input: distance <int>
+		Output: None
+		"""
+
 		self.distance = distance
 
 	def setOrbitalPeriod(self, orbitalPeriod):
+		"""
+		Setter method for orbitalPeriod variable
+		Input: orbitalPeriod <float>
+		Output: None
+		"""
+
 		self.orbitalPeriod = orbitalPeriod
 
 	# This is a base print statement for Planet
 	def info(self):
+		"""
+		Method which prints the name, distance and orbitalPeriod variables with some formatting
+		Input:	None
+		Output: None
+		"""
 
 		print("The planet {} is {} miles to the sun!\nIt takes {} Earth days to orbit the sun!\n".format(self.getName(), self.getDistance(),\
 		 self.getOrbitalPeriod()))

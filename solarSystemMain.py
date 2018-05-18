@@ -13,6 +13,27 @@ import sys
 
 
 class SolarSystem(object):
+	"""
+	Variables:
+				mercury <Mercury>
+				venus <Venus>
+				earth <Earth
+				mars <Mars>
+				jupiter <Jupiter>
+				saturn <Saturn>
+				uranus <Uranus>
+				neptune <Neptune>
+				pluto <Pluto>
+				planets [planet <Planet>]
+				planetNames [name <str>]
+	Methods:
+				__init__(self) Initializes the SolarSystem
+				info(self) Calls info method for each instanced planet in planets[]
+				infoSpecific(self, planetName) Calls info method for specific planet which name == planetName
+				orbitedTheSunPlanet(self, planet, days) Calculates how much a planet has orbited the sun in days
+				orbitedTheSun(self, days) Calls orbitedTheSunPlanet() for each planet in planets[]
+	"""
+
 
 	def __init__(self):
 		"""
@@ -46,7 +67,7 @@ class SolarSystem(object):
 			planet.info()
 			print("\n")
 
-	def infoSpecific(self,planetName):
+	def infoSpecific(self, planetName):
 		"""
 		Loops through planets[] comparing the name of each planet class with the input planet name in order to call 
 		the info function on that particular planet instance
@@ -59,7 +80,6 @@ class SolarSystem(object):
 				element.info()
 				print("\n")
 
-	# Func to print the how much a planet has orbited given some days
 	def orbitedTheSunPlanet(self, planet, days):
 		"""
 		Calculates how much a given input planet has orbited the sun given a number of input days
@@ -80,7 +100,6 @@ class SolarSystem(object):
 
 		print("{:<15} {:<15} {:<15}".format(planet.getName(), orbited, days))
 
-	# Uses a loop to call orbitedTheSunPlanet() on every planet in planets list 
 	def orbitedTheSun(self, days):
 		"""
 		Uses a loop to call the orbitedTheSunPlanet() on every planet in the planets list
@@ -93,8 +112,19 @@ class SolarSystem(object):
 			self.orbitedTheSunPlanet(planet, days)
 
 
-# I use the main function to test my classes
 def main():
+	"""
+	Instantiates a SolarSystem class, enters a while loop to act as a user interface. User interface accepts 1, 2, 3 
+	 and calls the appropriate function for the given input. 
+	 Before entering any if statement checks to ensure the input is an integer type.
+	 1: SolarSystem.info(), can call info on every instance of Planet, or specific .info() on a specific Planet instance
+	 	which is determined by the input name.
+	 	Error catching if the input is not a recognized string
+	 2: SolarSystem.orbitedTheSun(), asks user for a float number of days and runs the orbitedTheSun on that number of days
+	 	Has an error check to ensure the type is a float.
+	 3: Exits the script.
+	 else: If the number is not one of those mentioned the prompt asks again for a number.
+	"""
 
 	# Instantiate a SolarSystem class
 	solarsystem = SolarSystem()
@@ -105,7 +135,7 @@ def main():
 	# Allows the user to continue using the main with input values 1,2,3 
 	while(menuInput!=3):
 		menuInput = 0
-		
+
 		user_input = input('\nPress 1 if you would like to view the information of a planet in our solar system.\
 		 \nPress 2 if you would like to input a number of days and see how much the planets orbited the sun.\
 		 \nPress 3 if you would like to exit.\
@@ -133,7 +163,6 @@ def main():
 
 			else:
 				print("That is not a correctly named planet, it should be in the form Earth, Mars etc...")
-				exit(3)
 
 		elif (menuInput == 2):
 			# Ask for user input to test orbitedTheSun()
