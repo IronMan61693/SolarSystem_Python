@@ -133,7 +133,7 @@ def main():
 	menuInput = 0
 
 	# Allows the user to continue using the main with input values 1,2,3 
-	while(menuInput!=3):
+	while(True):
 		menuInput = 0
 
 		user_input = input('\nPress 1 if you would like to view the information of a planet in our solar system.\
@@ -175,11 +175,15 @@ def main():
 				solarsystem.orbitedTheSun(day)
 
 			except ValueError:
-				print("That is not a number!")
+				print("That input was not a number.")
+
+			except OverflowError:
+				print("The input number is too large.")
 
 			
 
 		elif (menuInput == 3):
+			print("Good bye!")
 			exit(0)
 
 		else:
