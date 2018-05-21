@@ -24,8 +24,8 @@ class SolarSystem(object):
 				uranus <Uranus>
 				neptune <Neptune>
 				pluto <Pluto>
-				planets [planet <Planet>]
-				planetNames [name <str>]
+				planets [<Planet>]
+				planetNames [<str>]
 	Methods:
 				__init__(self) Initializes the SolarSystem
 				info(self) Calls info method for each instanced planet in planets[]
@@ -172,7 +172,6 @@ def main():
 			try: 
 				day = float(user_inputDays)
 
-				# Call the orbitedTheSun() func
 				solarsystem.orbitedTheSun(day)
 
 			except ValueError:
@@ -187,7 +186,7 @@ def main():
 			print("Please select one of the options")
 
 
-# This is just a check to make sure the script is being handled correctly
+# This is a check to make sure the script is being handled correctly
 if (__name__ == "__main__"):
 	main()
 

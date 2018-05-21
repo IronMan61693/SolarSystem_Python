@@ -19,14 +19,14 @@ class Mercury(Planet):
 				data2 [<str>]
 	Methods:
 				__init__(self) Initializes the Planet with the given information, and calls
-					Planet.info() from Planet class
-				info(self) Calls Planet.info() from Planet class and adds more print statements
+					Planet.info() and printTable methods from Planet class
+				info(self) Calls Planet.info() and printTable methods from Planet class and adds more print statements
 
 	"""
 
 	def __init__(self):
 		"""
-		Calls Planet.info() from Planet class, overloads with specific information for 
+		Calls Planet.info() and printTable methods from Planet class, overloads with specific information for 
 		 this planet, and adds a dictionary as data1 and list as data2
 		Input:	None
 		Output: None
@@ -38,7 +38,7 @@ class Mercury(Planet):
 	
 	def info(self):
 		"""
-		Calls Planet.info() from Planet class and adds print statements for the new data1 and data2
+		Calls Planet.info() and printTable methods from Planet class and adds print statements for the new data1 and data2
 		Input:	None
 		Output: None
 		"""
@@ -58,14 +58,14 @@ class Venus(Planet):
 				data2 [<str>]
 	Methods:
 				__init__(self) Initializes the Planet with the given information, and calls
-					Planet.info() from Planet class
-				info(self) Calls Planet.info() from Planet class and adds more print statements
+					Planet.info() and printTable methods from Planet class
+				info(self) Calls Planet.info() and printTable methods from Planet class and adds more print statements
 
 	"""
 
 	def __init__(self):
 		"""
-		Calls Planet.info() from Planet class, overloads with specific information for 
+		Calls Planet.info() and printTable methods from Planet class, overloads with specific information for 
 		 this planet, and adds a list for data1 and data2
 		Input:	None
 		Output: None
@@ -77,7 +77,7 @@ class Venus(Planet):
 
 	def info(self):
 		"""
-		Calls Planet.info() from Planet class and adds print statements for the new data1 and data2
+		Calls Planet.info() and printTable methods from Planet class and adds print statements for the new data1 and data2
 		Input:	None
 		Output: None
 		"""
@@ -97,14 +97,14 @@ class Earth(Planet):
 				data2 [<str>]
 	Methods:
 				__init__(self) Initializes the Planet with the given information, and calls
-					Planet.info() from Planet class
-				info(self) Calls Planet.info() from Planet class and adds more print statements
+					Planet.info() and printTable methods from Planet class
+				info(self) Calls Planet.info() and printTable methods from Planet class and adds more print statements
 
 	"""
 
 	def __init__(self):
 		"""
-		Calls Planet.info() from Planet class, overloads with specific information for 
+		Calls Planet.info() and printTable methods from Planet class, overloads with specific information for 
 		 this planet, and adds a list for data1 and data2
 		Input:	None
 		Output: None
@@ -116,7 +116,7 @@ class Earth(Planet):
 
 	def info(self):
 		"""
-		Calls Planet.info() from Planet class and adds print statements for the new data1 and data2
+		Calls Planet.info() and printTable methods from Planet class and adds print statements for the new data1 and data2
 		Input:	None
 		Output: None
 		"""
@@ -136,14 +136,14 @@ class Mars(Planet):
 				data2 [<str>]
 	Methods:
 				__init__(self) Initializes the Planet with the given information, and calls
-					Planet.info() from Planet class
-				info(self) Calls Planet.info() from Planet class and adds more print statements
+					Planet.info() and printTable methods from Planet class
+				info(self) Calls Planet.info() and printTable methods from Planet class and adds more print statements
 
 	"""
 	
 	def __init__(self):
 		"""
-		Calls Planet.info() from Planet class, overloads with specific information for 
+		Calls Planet.info() and printTable methods from Planet class, overloads with specific information for 
 		 this planet, and adds a list for data1 and data2
 		Input:	None
 		Output: None
@@ -155,7 +155,7 @@ class Mars(Planet):
 
 	def info(self):
 		"""
-		Calls Planet.info() from Planet class and adds print statements for the new data1 and data2
+		Calls Planet.info() and printTable methods from Planet class and adds print statements for the new data1 and data2
 		Input:	None
 		Output: None
 		"""
@@ -175,14 +175,14 @@ class Jupiter(Planet):
 				data2 [<str>]
 	Methods:
 				__init__(self) Initializes the Planet with the given information, and calls
-					Planet.info() from Planet class
-				info(self) Calls Planet.info() from Planet class and adds more print statements
+					Planet.info() and printTable methods from Planet class
+				info(self) Calls Planet.info() and printTable methods from Planet class and adds more print statements
 
 	"""
 
 	def __init__(self):
 		"""
-		Calls Planet.info() from Planet class, overloads with specific information for 
+		Calls Planet.info() and printTable methods from Planet class, overloads with specific information for 
 		 this planet, and adds a list for data1 and data2
 		Input:	None
 		Output: None
@@ -194,7 +194,7 @@ class Jupiter(Planet):
 
 	def info(self):
 		"""
-		Calls Planet.info() from Planet class and adds print statements for the new data1 and data2
+		Calls Planet.info() and printTable methods from Planet class and adds print statements for the new data1 and data2
 		Input:	None
 		Output: None
 		"""
@@ -215,14 +215,14 @@ class Neptune(Planet):
 				data2 [<str>]
 	Methods:
 				__init__(self) Initializes the Planet with the given information, and calls
-					Planet.info() from Planet class
-				info(self) Calls Planet.info() from Planet class and adds more print statements
+					Planet.info() and printTable methods from Planet class
+				info(self) Calls Planet.info() and printTable methods from Planet class and adds more print statements
 
 	"""
 
 	def __init__(self):
 		"""
-		Calls Planet.info() from Planet class, overloads with specific information for 
+		Calls Planet.info() and printTable methods from Planet class, overloads with specific information for 
 		 this planet, and adds a list for data1 and data2
 		Input:	None
 		Output: None
@@ -234,7 +234,7 @@ class Neptune(Planet):
 
 	def info(self):
 		"""
-		Calls Planet.info() from Planet class and adds print statements for the new data1 and data2
+		Calls Planet.info() and printTable methods from Planet class and adds print statements for the new data1 and data2
 		Input:	None
 		Output: None
 		"""
@@ -254,14 +254,14 @@ class Uranus(Planet):
 				data2 [<str>]
 	Methods:
 				__init__(self) Initializes the Planet with the given information, and calls
-					Planet.info() from Planet class
-				info(self) Calls Planet.info() from Planet class and adds more print statements
+					Planet.info() and printTable methods from Planet class
+				info(self) Calls Planet.info() and printTable methods from Planet class and adds more print statements
 
 	"""
 
 	def __init__(self):
 		"""
-		Calls Planet.info() from Planet class, overloads with specific information for 
+		Calls Planet.info() and printTable methods from Planet class, overloads with specific information for 
 		 this planet, and adds a list for data1 and data2
 		Input:	None
 		Output: None
@@ -273,7 +273,7 @@ class Uranus(Planet):
 
 	def info(self):
 		"""
-		Calls Planet.info() from Planet class and adds print statements for the new data1 and data2
+		Calls Planet.info() and printTable methods from Planet class and adds print statements for the new data1 and data2
 		Input:	None
 		Output: None
 		"""
@@ -293,14 +293,14 @@ class Saturn(Planet):
 				data2 [<str>]
 	Methods:
 				__init__(self) Initializes the Planet with the given information, and calls
-					Planet.info() from Planet class
-				info(self) Calls Planet.info() from Planet class and adds more print statements
+					Planet.info() and printTable methods from Planet class
+				info(self) Calls Planet.info() and printTable methods from Planet class and adds more print statements
 
 	"""
 
 	def __init__(self):
 		"""
-		Calls Planet.info() from Planet class, overloads with specific information for 
+		Calls Planet.info() and printTable methods from Planet class, overloads with specific information for 
 		 this planet, and adds a list for data1 and data2
 		Input:	None
 		Output: None
@@ -312,7 +312,7 @@ class Saturn(Planet):
 
 	def info(self):
 		"""
-		Calls Planet.info() from Planet class and adds print statements for the new data1 and data2
+		Calls Planet.info() and printTable methods from Planet class and adds print statements for the new data1 and data2
 		Input:	None
 		Output: None
 		"""
@@ -332,14 +332,14 @@ class Pluto(Planet):
 				data2 [<str>]
 	Methods:
 				__init__(self) Initializes the Planet with the given information, and calls
-					Planet.info() from Planet class
-				info(self) Calls Planet.info() from Planet class and adds more print statements
+					Planet.info() and printTable methods from Planet class
+				info(self) Calls Planet.info() and printTable methods from Planet class and adds more print statements
 
 	"""
 
 	def __init__(self):
 		"""
-		Calls Planet.info() from Planet class, overloads with specific information for 
+		Calls Planet.info() and printTable methods from Planet class, overloads with specific information for 
 		 this planet, and adds a list for data1 and data2
 		Input:	None
 		Output: None
@@ -351,11 +351,11 @@ class Pluto(Planet):
 
 	def info(self):
 		"""
-		Calls Planet.info() from Planet class and adds print statements for the new data1 and data2
+		Calls Planet.info() and printTable methods from Planet class and adds print statements for the new data1 and data2
 		Input:	None
 		Output: None
 		"""
 
 		Planet.info(self)
-		Planet.printSingleTable(self, 45, "Fun facts", self.data1)
+		Planet.printSingleTable(self, 80, "Fun facts", self.data1)
 		Planet.printSingleTable(self, 25, "Moons of Pluto", self.data2)

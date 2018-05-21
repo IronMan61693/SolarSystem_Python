@@ -120,7 +120,6 @@ class Planet(object):
 
 		self.orbitalPeriod = orbitalPeriod
 
-	# This is a base print statement for Planet
 	def info(self):
 		"""
 		Method which prints the name, distance and orbitalPeriod variables with some formatting
@@ -128,6 +127,7 @@ class Planet(object):
 		Output: None
 		"""
 
+		print("{}: \n".format(self.getName()))
 		print("The planet {} is {} miles to the sun!\nIt takes {} Earth days to orbit the sun!\n".format(self.getName(), self.getDistance(),\
 		 self.getOrbitalPeriod()))
 
@@ -141,8 +141,10 @@ class Planet(object):
 			Output: None
 		"""
 		print("  {:^{}} \n".format(name, columnSize))
+		print("\ {:-^{}} /".format("",columnSize))
 		for element in data:
 			print("| {:^{}} |".format(element, columnSize))
+		print("/ {:-^{}} \ ".format("",columnSize))
 		print("\n")
 
 	def printDoubleTable(self, leftColumnSize, name1, rightColumnSize, name2, data):
@@ -159,8 +161,10 @@ class Planet(object):
 
 		"""
 		print("{:^{}}     {:^{}}\n".format(name1, leftColumnSize, name2, rightColumnSize))
+		print("\ {:-^{}} /".format("",leftColumnSize+rightColumnSize+2))
 		for elementKey in data:
 			print ("| {:^{}} | {:^{}}| ".format(elementKey, leftColumnSize, data[elementKey], rightColumnSize))
+		print("/ {:-^{}} \ ".format("",leftColumnSize+rightColumnSize+2))
 		print("\n")
 
 
