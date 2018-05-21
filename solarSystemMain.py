@@ -53,7 +53,10 @@ class SolarSystem(object):
 		self.neptune = Neptune()
 		self.pluto = Pluto()
 		self.planets = [self.mercury, self.venus, self.earth, self.mars, self.jupiter, self.saturn, self.uranus, self.neptune, self.pluto]
-		self.planetNames = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune", "Pluto"]
+		self.planetNames = []
+		for planet in self.planets:
+			self.planetNames.append(planet.getName())
+
 	
 
 	def info(self):
@@ -129,20 +132,21 @@ def main():
 	# Instantiate a SolarSystem class
 	solarsystem = SolarSystem()
 
-	# User interface
-	menuInput = 0
-
 	# Allows the user to continue using the main with input values 1,2,3 
 	while(True):
-		menuInput = 0
 
-		user_input = input('\nPress 1 if you would like to view the information of a planet in our solar system.\
-		 \nPress 2 if you would like to input a number of days and see how much the planets orbited the sun.\
-		 \nPress 3 if you would like to exit.\
-		 \nHave a nice day! \n')
+		# This is for the case when a previously good input was called followed by
+		# a bad input, it asks for the user to declare what they would like again
+
+		menuInput = 0
 
 		# Verifies the input can be cast to an integer 
 		try: 
+			user_input = input('\nPress 1 if you would like to view the information of a planet in our solar system.\
+			 \nPress 2 if you would like to input a number of days and see how much the planets orbited the sun.\
+			 \nPress 3 if you would like to exit.\
+			 \nHave a nice day! \n')
+
 			menuInput = int(user_input)
 
 		except ValueError:
@@ -165,13 +169,12 @@ def main():
 				print("That is not a correctly named planet, it should be in the form Earth, Mars etc...")
 
 		elif (menuInput == 2):
-			# Ask for user input to test orbitedTheSun()
-			user_inputDays = input('How many days orbit would you like to check? \n')
 
-			# Verify the input is a type we can use
 			try: 
-				day = float(user_inputDays)
+				# Ask for user input to test orbitedTheSun() a verify it is useable
+				user_inputDays = input('How many days orbit would you like to check? \n')
 
+				day = float(user_inputDays)
 				solarsystem.orbitedTheSun(day)
 
 			except ValueError:
@@ -195,4 +198,4 @@ if (__name__ == "__main__"):
 	main()
 
 else:
-	print("improper use of the script!")
+	print("Did not run main function")

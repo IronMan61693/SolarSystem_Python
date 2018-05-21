@@ -15,8 +15,8 @@ class Mercury(Planet):
 				name <str>
 				distance <int>
 				orbitalPeriod <float>
-				data1 {<str> : <int>}
-				data2 [<str>]
+				basins {<str> : <int>}
+				notableObservers [<str>]
 	Methods:
 				__init__(self) Initializes the Planet with the given information, and calls
 					Planet.info() and printTable methods from Planet class
@@ -26,26 +26,25 @@ class Mercury(Planet):
 
 	def __init__(self):
 		"""
-		Calls Planet.info() and printTable methods from Planet class, overloads with specific information for 
-		 this planet, and adds a dictionary as data1 and list as data2
+		Calls Planet.__init__ and for this planet, adds a dictionary for basins and list for notableObservers
 		Input:	None
 		Output: None
 		"""
 
-		data1 = {"Caloris Basin": 1550, "Tolstoj Basin": 400, "Beethoven Basin": 625}
-		data2 = ["Galileo", "Gassendi", "Kepler", "Zupi"]
-		Planet.__init__(self, "Mercury", 57910000, 87.969, data1, data2)
+		self.basins = {"Caloris Basin": 1550, "Tolstoj Basin": 400, "Beethoven Basin": 625}
+		self.notableObservers = ["Galileo", "Gassendi", "Kepler", "Zupi"]
+		Planet.__init__(self, "Mercury", 57910000, 87.969)
 	
 	def info(self):
 		"""
-		Calls Planet.info() and printTable methods from Planet class and adds print statements for the new data1 and data2
+		Calls Planet.info() and printTable methods from Planet class and adds print statements for the new information
 		Input:	None
 		Output: None
 		"""
 
 		Planet.info(self)
-		Planet.printDoubleTable(self,25, "Basin Name", 20, "Depth in Kilometers", self.data1)
-		Planet.printSingleTable(self, 25, "Famous Telescopic Observers", self.data2)
+		Planet.printDoubleTableDict(self, "Basin Name", "Depth in Kilometers", self.basins)
+		Planet.printSingleTableList(self, "Famous Telescopic Observers", self.notableObservers)
 
 
 class Venus(Planet):
@@ -54,8 +53,8 @@ class Venus(Planet):
 				name <str>
 				distance <int>
 				orbitalPeriod <float>
-				data1 [<str>]
-				data2 [<str>]
+				spaceMissions [<str>]
+				moons [<str>]
 	Methods:
 				__init__(self) Initializes the Planet with the given information, and calls
 					Planet.info() and printTable methods from Planet class
@@ -65,26 +64,27 @@ class Venus(Planet):
 
 	def __init__(self):
 		"""
-		Calls Planet.info() and printTable methods from Planet class, overloads with specific information for 
-		 this planet, and adds a list for data1 and data2
+		Calls Planet.__init__ and adds variables for the new specific information for this planet 
 		Input:	None
 		Output: None
 		"""
 
-		data1 =  ["MESSENGER", "Venus Express", "Magellan", "Vega 2", "Vega 1", "Venera 16"]
-		data2 = ["No moons oh my"]
-		Planet.__init__(self, "Venus", 67240000, 225., data1, data2)
+		self.spaceMissions =  ["MESSENGER", "Venus Express", "Magellan", "Vega 2", "Vega 1", "Venera 16"]
+		self.poets = {"Homer": "Iliad", "Virgil" : "Eclogues", "William Blake" : "To The Evening Star",\
+					  "Robert Frost" : "Literate Farmer and The Planet Venus", "Alfred Lord Tennyson" : "Crossing the Bar",\
+					  "Stephen King": "The Cursed Expidition"}
+		Planet.__init__(self, "Venus", 67240000, 225.)
 
 	def info(self):
 		"""
-		Calls Planet.info() and printTable methods from Planet class and adds print statements for the new data1 and data2
+		Calls Planet.info() and printTable methods from Planet class and adds print statements for the new information
 		Input:	None
 		Output: None
 		"""
 
 		Planet.info(self)
-		Planet.printSingleTable(self, 35, "Past Space Missions", self.data1)
-		Planet.printSingleTable(self, 35, "Known Moons", self.data2)
+		Planet.printSingleTableList(self, "Past Space Missions", self.spaceMissions)
+		Planet.printDoubleTableDict(self, "Poets", "The work which referenced Venus", self.poets)
 
 
 class Earth(Planet):
@@ -93,8 +93,8 @@ class Earth(Planet):
 				name <str>
 				distance <int>
 				orbitalPeriod <float>
-				data1 [<str>]
-				data2 [<str>]
+				oceans [<str>]
+				continents [<str>]
 	Methods:
 				__init__(self) Initializes the Planet with the given information, and calls
 					Planet.info() and printTable methods from Planet class
@@ -104,26 +104,25 @@ class Earth(Planet):
 
 	def __init__(self):
 		"""
-		Calls Planet.info() and printTable methods from Planet class, overloads with specific information for 
-		 this planet, and adds a list for data1 and data2
+		Calls Planet.__init__ and adds variables for the new specific information for this planet 
 		Input:	None
 		Output: None
 		"""
 
-		data1 = ["Pacific", "Atlantic", "Indian", "Southern", "Artic"]
-		data2 = ["North America", "South America", "Antartica", "Africa", "Europe", "Asia", "Australia"]
-		Planet.__init__(self, "Earth", 92960000, 365.25, data1, data2)
+		self.oceans = ["Pacific", "Atlantic", "Indian", "Southern", "Artic"]
+		self.continents = ["North America", "South America", "Antartica", "Africa", "Europe", "Asia", "Australia"]
+		Planet.__init__(self, "Earth", 92960000, 365.25)
 
 	def info(self):
 		"""
-		Calls Planet.info() and printTable methods from Planet class and adds print statements for the new data1 and data2
+		Calls Planet.info() and printTable methods from Planet class and adds print statements for the new information
 		Input:	None
 		Output: None
 		"""
 
 		Planet.info(self)
-		Planet.printSingleTable(self,25,"Oceans", self.data1)
-		Planet.printSingleTable(self,30, "Continents", self.data2)
+		Planet.printSingleTableList(self, "Oceans", self.oceans)
+		Planet.printSingleTableList(self, "Continents", self.continents)
 
 
 class Mars(Planet):
@@ -132,8 +131,8 @@ class Mars(Planet):
 				name <str>
 				distance <int>
 				orbitalPeriod <float>
-				data1 [<str>]
-				data2 [<str>]
+				spaceMissions [<str>]
+				moons [<str>]
 	Methods:
 				__init__(self) Initializes the Planet with the given information, and calls
 					Planet.info() and printTable methods from Planet class
@@ -141,28 +140,28 @@ class Mars(Planet):
 
 	"""
 	
-	def __init__(self):
+	def __init__(self, spaceMissions = [], moons = []):
 		"""
-		Calls Planet.info() and printTable methods from Planet class, overloads with specific information for 
-		 this planet, and adds a list for data1 and data2
+		Calls Planet.__init__ and adds variables for the new specific information for this planet 
 		Input:	None
 		Output: None
 		"""
 
-		data1 = ["2001 Mars Odyssey", "Mars Express", "Mars Reconnaissance Orbiter", "MAVEN", "Mars Obiter Mission", "ExoMars Trace Gas Orbiter"]
-		data2 = ["Phobos", "Deimos"]
-		Planet.__init__(self, "Mars", 141600000, 687, data1, data2)
+		self.spaceMissions = ["2001 Mars Odyssey", "Mars Express", "Mars Reconnaissance Orbiter", "MAVEN", "Mars Obiter Mission",\
+		 		 			  "ExoMars Trace Gas Orbiter"]
+		self.moons = ["Phobos", "Deimos"]
+		Planet.__init__(self, "Mars", 141600000, 687)
 
 	def info(self):
 		"""
-		Calls Planet.info() and printTable methods from Planet class and adds print statements for the new data1 and data2
+		Calls Planet.info() and printTable methods from Planet class and adds print statements for the new information
 		Input:	None
 		Output: None
 		"""
 
 		Planet.info(self)
-		Planet.printSingleTable(self, 35, "Misssions to Mars!", self.data1)
-		Planet.printSingleTable(self, 25, "Moons", self.data2)
+		Planet.printSingleTableList(self, "Misssions to Mars!", self.spaceMissions)
+		Planet.printSingleTableList(self, "Moons", self.moons)
 
 
 class Jupiter(Planet):
@@ -171,8 +170,8 @@ class Jupiter(Planet):
 				name <str>
 				distance <int>
 				orbitalPeriod <float>
-				data1 [<str>]
-				data2 [<str>]
+				spaceMissions [<str>]
+				moons [<str>]
 	Methods:
 				__init__(self) Initializes the Planet with the given information, and calls
 					Planet.info() and printTable methods from Planet class
@@ -182,26 +181,25 @@ class Jupiter(Planet):
 
 	def __init__(self):
 		"""
-		Calls Planet.info() and printTable methods from Planet class, overloads with specific information for 
-		 this planet, and adds a list for data1 and data2
+		Calls Planet.__init__ and adds variables for the new specific information for this planet 
 		Input:	None
 		Output: None
 		"""
 
-		data1 = ["Pioneer program", "Voyager program", "Ulysses", "Cassini", "New Horizons", "Galileo", "Juno"]
-		data2 = ["Io", "Europa", "Ganymede", "Callisto"]
-		Planet.__init__(self, "Jupiter", 483800000, (365.25*12), data1, data2)
+		self.spaceMissions = ["Pioneer program", "Voyager program", "Ulysses", "Cassini", "New Horizons", "Galileo", "Juno"]
+		self.moons = ["Io", "Europa", "Ganymede", "Callisto"]
+		Planet.__init__(self, "Jupiter", 483800000, (365.25*12))
 
 	def info(self):
 		"""
-		Calls Planet.info() and printTable methods from Planet class and adds print statements for the new data1 and data2
+		Calls Planet.info() and printTable methods from Planet class and adds print statements for the new information
 		Input:	None
 		Output: None
 		"""
 
 		Planet.info(self)
-		Planet.printSingleTable(self, 30, "Missions including Jupiter", self.data1)
-		Planet.printSingleTable(self, 25, "Moons of Jupiter", self.data2)
+		Planet.printSingleTableList(self, "Missions including Jupiter", self.spaceMissions)
+		Planet.printSingleTableList(self, "Moons of Jupiter", self.moons)
 				
 
 
@@ -211,8 +209,8 @@ class Neptune(Planet):
 				name <str>
 				distance <int>
 				orbitalPeriod <float>
-				data1 [<str>]
-				data2 [<str>]
+				spaceMissions [<str>]
+				moons [<str>]
 	Methods:
 				__init__(self) Initializes the Planet with the given information, and calls
 					Planet.info() and printTable methods from Planet class
@@ -222,26 +220,25 @@ class Neptune(Planet):
 
 	def __init__(self):
 		"""
-		Calls Planet.info() and printTable methods from Planet class, overloads with specific information for 
-		 this planet, and adds a list for data1 and data2
+		Calls Planet.__init__ and adds variables for the new specific information for this planet 
 		Input:	None
 		Output: None
 		"""
 
-		data1 = ["Voyager 2"]
-		data2 = ["Triton", "Nereid", "Proteus", "Naiad", "Thalassa", "Despina", "Galatea"]
-		Planet.__init__(self, "Neptune", 2793000000, (165*365.25), data1, data2)
+		self.spaceMissions = ["Voyager 2"]
+		self.moons = ["Triton", "Nereid", "Proteus", "Naiad", "Thalassa", "Despina", "Galatea"]
+		Planet.__init__(self, "Neptune", 2793000000, (165*365.25))
 
 	def info(self):
 		"""
-		Calls Planet.info() and printTable methods from Planet class and adds print statements for the new data1 and data2
+		Calls Planet.info() and printTable methods from Planet class and adds print statements for the new information
 		Input:	None
 		Output: None
 		"""
 
 		Planet.info(self)
-		Planet.printSingleTable(self, 30, "Missions including Neptune", self.data1)
-		Planet.printSingleTable(self, 25, "Moons of Neptune", self.data2)
+		Planet.printSingleTableList(self, "Missions including Neptune", self.spaceMissions)
+		Planet.printSingleTableList(self, "Moons of Neptune", self.moons)
 
 
 class Uranus(Planet):
@@ -250,8 +247,8 @@ class Uranus(Planet):
 				name <str>
 				distance <int>
 				orbitalPeriod <float>
-				data1 [<str>]
-				data2 [<str>]
+				spaceMissions [<str>]
+				moons [<str>]
 	Methods:
 				__init__(self) Initializes the Planet with the given information, and calls
 					Planet.info() and printTable methods from Planet class
@@ -261,26 +258,25 @@ class Uranus(Planet):
 
 	def __init__(self):
 		"""
-		Calls Planet.info() and printTable methods from Planet class, overloads with specific information for 
-		 this planet, and adds a list for data1 and data2
+		Calls Planet.__init__ and adds variables for the new specific information for this planet 
 		Input:	None
 		Output: None
 		"""
 
-		data1 = ["Voyager 2"]
-		data2 = ["Miranda", "Ariel", "Umbriel", "Titania", "Oberon"]
-		Planet.__init__(self, "Uranus", 1784000000, (84 * 365.25), data1, data2)
+		self.spaceMissions = ["Voyager 2"]
+		self.moons = ["Miranda", "Ariel", "Umbriel", "Titania", "Oberon"]
+		Planet.__init__(self, "Uranus", 1784000000, (84 * 365.25))
 
 	def info(self):
 		"""
-		Calls Planet.info() and printTable methods from Planet class and adds print statements for the new data1 and data2
+		Calls Planet.info() and printTable methods from Planet class and adds print statements for the new information
 		Input:	None
 		Output: None
 		"""
 
 		Planet.info(self)
-		Planet.printSingleTable(self, 30, "Missions including Uranus", self.data1)
-		Planet.printSingleTable(self, 25, "Moons of Uranus", self.data2)
+		Planet.printSingleTableList(self, "Missions including Uranus", self.spaceMissions)
+		Planet.printSingleTableList(self, "Moons of Uranus", self.moons)
 
 
 class Saturn(Planet):
@@ -289,8 +285,8 @@ class Saturn(Planet):
 				name <str>
 				distance <int>
 				orbitalPeriod <float>
-				data1 [<str>]
-				data2 [<str>]
+				spaceMissions [<str>]
+				moons [<str>]
 	Methods:
 				__init__(self) Initializes the Planet with the given information, and calls
 					Planet.info() and printTable methods from Planet class
@@ -300,26 +296,25 @@ class Saturn(Planet):
 
 	def __init__(self):
 		"""
-		Calls Planet.info() and printTable methods from Planet class, overloads with specific information for 
-		 this planet, and adds a list for data1 and data2
+		Calls Planet.__init__ and adds variables for the new specific information for this planet 
 		Input:	None
 		Output: None
 		"""
 
-		data1 = ["Pioneer 11", "Voyager 1", "Voyager 2", "Cassini/Huygens"]
-		data2 = ["Titan", "Rhea", "Enceladus"]
-		Planet.__init__(self, "Saturn", 890700000, (29*365.25), data1, data2)
+		self.spaceMissions = ["Pioneer 11", "Voyager 1", "Voyager 2", "Cassini/Huygens"]
+		self.moons = ["Titan", "Rhea", "Enceladus", "Mimas", "Dione", "Iapetus"]
+		Planet.__init__(self, "Saturn", 890700000, (29*365.25))
 
 	def info(self):
 		"""
-		Calls Planet.info() and printTable methods from Planet class and adds print statements for the new data1 and data2
+		Calls Planet.info() and printTable methods from Planet class and adds print statements for the new information
 		Input:	None
 		Output: None
 		"""
 
 		Planet.info(self)
-		Planet.printSingleTable(self, 30, "Missions including Saturn", self.data1)
-		Planet.printSingleTable(self, 25, "Moons of Saturn", self.data2)
+		Planet.printSingleTableList(self, "Missions including Saturn", self.spaceMissions)
+		Planet.printSingleTableList(self, "Moons of Saturn", self.moons)
 
 
 class Pluto(Planet):
@@ -328,8 +323,8 @@ class Pluto(Planet):
 				name <str>
 				distance <int>
 				orbitalPeriod <float>
-				data1 [<str>]
-				data2 [<str>]
+				funFact [<str>]
+				moons [<str>]
 	Methods:
 				__init__(self) Initializes the Planet with the given information, and calls
 					Planet.info() and printTable methods from Planet class
@@ -339,23 +334,26 @@ class Pluto(Planet):
 
 	def __init__(self):
 		"""
-		Calls Planet.info() and printTable methods from Planet class, overloads with specific information for 
-		 this planet, and adds a list for data1 and data2
+		Calls Planet.__init__ and adds variables for the new specific information for this planet 
 		Input:	None
 		Output: None
 		"""
 
-		data1 = ["Named after the Roman god of the underworld", "1930 Walt was inspired to use the name for the canine companion"]
-		data2 = ["Charon", "Styx", "Nix", "Kerberos", "Hydra"]
-		Planet.__init__(self, "Pluto", 3670000000, (248*365), data1, data2)
+		self.funFact = ["Named after the Roman god of the underworld",
+						"1930 Walt was inspired to use the name for the canine companion",
+						"ReClassified a dwarf planet in 2006",
+						"Discovered in 1930"
+						"Is one third water"]
+		self.moons = ["Charon", "Styx", "Nix", "Kerberos", "Hydra"]
+		Planet.__init__(self, "Pluto", 3670000000, (248*365))
 
 	def info(self):
 		"""
-		Calls Planet.info() and printTable methods from Planet class and adds print statements for the new data1 and data2
+		Calls Planet.info() and printTable methods from Planet class and adds print statements for the new information
 		Input:	None
 		Output: None
 		"""
 
 		Planet.info(self)
-		Planet.printSingleTable(self, 80, "Fun facts", self.data1)
-		Planet.printSingleTable(self, 25, "Moons of Pluto", self.data2)
+		Planet.printSingleTableList(self, "Fun facts", self.funFact)
+		Planet.printSingleTableList(self, "Moons of Pluto", self.moons)

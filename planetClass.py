@@ -31,20 +31,17 @@ class Planet(object):
 					Print method for formatting a dictionary
 	"""
 
-	def __init__(self, name = "none", distance = 1, orbitalPeriod = .1, data1 = None, data2 = None):
+	def __init__(self, name = "none", distance = 1, orbitalPeriod = .1):
 		"""
 		Initializes a Planet class with the following parameters
 		Input:	name <str>
 				distance <int>
 				orbitalPeriod <float>
-				data1 <None>
-				data2 <None>
 		"""
+
 		self.name = name
 		self.distance = distance
 		self.orbitalPeriod = orbitalPeriod
-		self.data1 = data1
-		self.data2 = data2
 
 	# The following are getters so we do not directly reference the data in the class
 	def getName(self):
@@ -73,24 +70,6 @@ class Planet(object):
 		"""
 
 		return self.orbitalPeriod
-
-	def getData1(self):
-		"""
-		Getter method for data1 variable
-		Input: None
-		Output: data1 <None>
-		"""
-
-		return self.data1
-
-	def getData2(self):
-		"""
-		Getter method for data2 variable
-		Input: None
-		Output: data2 <None>
-		"""
-
-		return self.data2
 
 	# These are the setters
 	def setName(self, name):
@@ -128,43 +107,76 @@ class Planet(object):
 		"""
 
 		print("{}: \n".format(self.getName()))
-		print("The planet {} is {} miles to the sun!\nIt takes {} Earth days to orbit the sun!\n".format(self.getName(), self.getDistance(),\
-		 self.getOrbitalPeriod()))
 
-	def printSingleTable(self,columnSize, name, data):
+		print("The planet {} is {} miles to the sun!\nIt takes {} Earth days to orbit the sun!\n".format(self.getName(),\
+		      self.getDistance(), self.getOrbitalPeriod()))
+
+	def printSingleTableList(self, tableTitle, data):
 		"""
-			Takes in desired column size, the name of the information being displayed and a list containing the data and 
+			Takes in the title of the information being displayed and a list containing the data and 
 			 formats a nice print statement
-			Input: 	columnSize <int>
-					name <str>
+			Input: 	tableTitle <str>
 					data [<str>]
 			Output: None
 		"""
-		print("  {:^{}} \n".format(name, columnSize))
-		print("\ {:-^{}} /".format("",columnSize))
+
+		# Calculates the longest length of the strings to use to format the table
+		maxStringLength = len(tableTitle)
+
+		for dataString in data:
+			if len(dataString) > maxStringLength:
+				maxStringLength = len(dataString)
+
+		# Prints the table name
+		print("  {:^{}} \n".format(tableTitle, maxStringLength))
+
+		# Prints a top border for the data
+		print("\ {:-^{}} /".format("",maxStringLength))
+		
+		# Prints each element and puts a border on the sides
 		for element in data:
-			print("| {:^{}} |".format(element, columnSize))
-		print("/ {:-^{}} \ ".format("",columnSize))
+			print("| {:^{}} |".format(element, maxStringLength))
+		
+		# Prints a bottom border for the data
+		print("/ {:-^{}} \ ".format("",maxStringLength))
 		print("\n")
 
-	def printDoubleTable(self, leftColumnSize, name1, rightColumnSize, name2, data):
+	def printDoubleTableDict(self, keyTableTitle, valueTableTitle, data):
 		"""
-			Takes in two strings which describe the type of information being displayed, name1: what the key represents name2: the value, 
-			goes through the dictionary data and prints the information in a nice table format, left and right column size denote the
-			desired width of the columns
-			Input:	leftColumnSize <int>
-					name1 <str>
-					rightColumnSize <int>
-					name2 <str>
+			Takes in two strings which are the titles for the keys and values respectively, 
+			goes through the dictionary data and prints the information in a nice table format
+			Input:	keyTableTitle <str>
+					valueTableTitle <str>
 					data {<str>: int}
 			Output: None
 
 		"""
-		print("{:^{}}     {:^{}}\n".format(name1, leftColumnSize, name2, rightColumnSize))
-		print("\ {:-^{}} /".format("",leftColumnSize+rightColumnSize+2))
+
+		# Calculates the longest length of the dictionary keys and values as a string
+		maxLengthKey = len(keyTableTitle)
+		maxLengthValue = len(valueTableTitle)
+
+		for key in data.keys():
+
+			if len(key) > maxLengthKey:
+				maxLengthKey = len(key)
+
+			if len( str( data[key])) > maxLengthValue:
+				maxLengthValue = len( str( data[key]))
+
+
+		# Prints the Table Titles with some extra spacing
+		print("{:^{}}     {:^{}}\n".format(keyTableTitle, maxLengthKey + 5, valueTableTitle, maxLengthValue + 5))
+
+		# Prints a top border for the table
+		print("\ {:-^{}} /".format("", maxLengthKey + maxLengthValue + 12))
+		
+		# Prints the information and puts a border on either side
 		for elementKey in data:
-			print ("| {:^{}} | {:^{}}| ".format(elementKey, leftColumnSize, data[elementKey], rightColumnSize))
-		print("/ {:-^{}} \ ".format("",leftColumnSize+rightColumnSize+2))
+			print ("| {:^{}} | {:^{}}| ".format(elementKey, maxLengthKey + 5, data[elementKey], maxLengthValue + 5))
+		
+		# Prints a bottom border for the table
+		print("/ {:-^{}} \ ".format("", maxLengthKey + maxLengthValue + 12))
 		print("\n")
 
 
