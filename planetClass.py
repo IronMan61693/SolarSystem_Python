@@ -37,6 +37,7 @@ class Planet(object):
 		Input:	name <str>
 				distance <int>
 				orbitalPeriod <float>
+		Output: None
 		"""
 
 		self.name = name
@@ -144,7 +145,7 @@ class Planet(object):
 	def printDoubleTableDict(self, keyTableTitle, valueTableTitle, data):
 		"""
 			Takes in two strings which are the titles for the keys and values respectively, 
-			goes through the dictionary data and prints the information in a nice table format
+			 goes through the dictionary data and prints the information in a nice table format
 			Input:	keyTableTitle <str>
 					valueTableTitle <str>
 					data {<str>: int}

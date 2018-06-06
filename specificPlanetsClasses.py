@@ -54,7 +54,7 @@ class Venus(Planet):
 				distance <int>
 				orbitalPeriod <float>
 				spaceMissions [<str>]
-				moons [<str>]
+				poets {<str> : <str>}
 	Methods:
 				__init__(self) Initializes the Planet with the given information, and calls
 					Planet.info() and printTable methods from Planet class

@@ -56,6 +56,11 @@ class SolarSystem(object):
 		self.planetNames = []
 		for planet in self.planets:
 			self.planetNames.append(planet.getName())
+		# Note I considered using a dictionary with the key as the planet name
+		# and the value as the planet class, but I chose to do it this way
+		# because the dictionary would print the planets in no particular order
+		# unless I went through and sorted them, and I want the solar system
+		# to print in the order I input the planets.
 
 	
 
@@ -150,7 +155,7 @@ def main():
 			menuInput = int(user_input)
 
 		except ValueError:
-			print("This was not a useable input type. Please input a number")
+			print("This was not a useable input type. Please input an integer")
 
 	# This is an input to display information about the planets
 		if (menuInput == 1):
